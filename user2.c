@@ -49,20 +49,21 @@ void* thread_send_data(char* data) {
   }
 }
 
-void* thread_receive_data(char* my_buf) {
+void* thread_receive_data(char* buf) {
   /* repeatedly receives pipe messages and prints them */
   while(1) {
-    receive_data("/tmp/user1_message", my_buf);
-    printf("\rFriend: %s\n", my_buf);
+    receive_data("/tmp/user1_message", buf);
+    printf("\rFriend: %s\n", buf);
     printf("Me: ");
     fflush(stdout);
-    memset(my_buf,0,1024);
+    memset(buf,0,1024); /* clear data stored in my_buf */
   }
 }
 
 int main() {
   char send_buffer[1024];
   char receive_buffer[1024];
+  
   pthread_t send_thread;
   pthread_create(&send_thread, NULL, thread_send_data, send_buffer);
 

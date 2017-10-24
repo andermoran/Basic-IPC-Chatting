@@ -6,7 +6,7 @@
 
 ## What's going on?
 
-> In this projects named pipes are used for IPC. Pipes are essentially channels that processes can use to communication with one another. One could think of pipes as a mail service. One processes sends mail to a mailbox and another process is able to read the mail from that mailbox. In simplest terms, this is what these two files (user1.c & user2.c) do. 
+> In this projects named pipes are used for IPC. Pipes are essentially channels that processes can use to communication with one another. One could think of pipes as a mail service. One processes sends mail to a mailbox and another process is able to read the mail from that mailbox. In simplest terms, this is what these two files (user1.c & user2.c) do. Two threads are created `send_thread` and `receive_thread`. These threads are then executed two calls of `pthread_create`. This allows for the two threads to run in parallel so that the program can receive data and send data concurrently.
 
 
 ## How do I run this?

@@ -21,11 +21,11 @@
 
 > The best way to run these two executables is to
 
->> Open a terminal window and run the user1 exectuable
+* Open a terminal window and run the user1 exectuable
 
->> Open another terminal window and run the user2 executable
+* Open another terminal window and run the user2 executable
 
->> Now start chatting!
+* Now start chatting!
 
 
 ## Need more info?

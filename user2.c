@@ -70,6 +70,6 @@ int main() {
   pthread_create(&receive_thread, NULL, thread_receive_data, receive_buffer);
   
   void * pv;
-  pthread_join(send_thread, &pv); /* not sure why I only have to do this with one thread */
+  pthread_join(send_thread, &pv); /* waits for thread to terminate */
   return 0;
 }

@@ -39,13 +39,12 @@ int receive_data(char* path, char* data_buffer) {
   return 0;
 }
 
-void* thread_send_data(char* data) {
+void* thread_send_data(char* buf) {
   /* repeatedly gets user input and sends it through the pipe */
   while (1) {
-    char str[1024];
     printf("Me: ");
-    gets(str);
-    send_data("/tmp/user1_message", str);
+    gets(buf);
+    send_data("/tmp/user1_message", buf);
   }
 }
 

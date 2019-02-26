@@ -39,13 +39,12 @@ int receive_data(char* path, char* data_buffer) {
   return 0;
 }
 
-void* thread_send_data(char* data) {
+void* thread_send_data(char* buf) {
   /* repeatedly gets user input and sends it through the pipe */
   while (1) {
-    char str[1024];
     printf("Me: ");
-    gets(str);
-    send_data("/tmp/user2_message", str);
+    gets(buf);
+    send_data("/tmp/user2_message", buf);
   }
 }
 
@@ -66,7 +65,7 @@ int main() {
   
   pthread_t send_thread;
   pthread_create(&send_thread, NULL, thread_send_data, send_buffer);
-
+  
   pthread_t receive_thread;
   pthread_create(&receive_thread, NULL, thread_receive_data, receive_buffer);
   
